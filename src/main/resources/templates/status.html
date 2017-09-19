@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>SJ-GROUP</title>
+<link rel="stylesheet" th:href="@{/css/box.css}" />
+</head>
+<body>
+	<div th:each="response : ${examResponse}" align="center">
+		<div
+			style="width: 800px; height: 600px; padding: 20px; text-align: center; border: 10px solid #787878"
+			align="center">
+			<div
+				style="width: 750px; height: 550px; padding: 20px; text-align: center; border: 5px solid #787878"
+				align="center">
+				<span style="font-size: 50px; font-weight: bold">Certificate
+					of Completion</span> <br></br> <br></br> <span style="font-size: 25px"><i>This
+						is to certify that</i></span> <br></br> <br></br> <span
+					style="font-size: 30px"><b th:text="${response.name}"></b></span> <br></br>
+				<br> </br> <span style="font-size: 25px"><i>has completed
+						the course</i></span> <br> </br> <span style="font-size: 30px"><b
+					th:text="${response.course}"></b></span> <br> </br>
+				<div align="center">
+					<form>
+						<input class="MyButton" type="button" value="Download PDF"
+							onclick="window.location.href='/Java_Gyan_Mantra/downloadPDF'" />
+					</form>
+				</div>
+				<span style="font-size: 20px">with score of <b
+					th:text="${response.percent}+'%'"></b>
+				</span><br> </br> <span style="font-size: 25px"> <i>dated</i>
+				</span><b th:text="${response.date}"></b> <span style="font-size: 30px"></span>
+				<br></br>
+				<p style="color: navy;" th:text="${response.message}"></p>
+				<br></br>
+				<div align="center">
+					<table border="1" cellpadding="5" cellspacing="5"
+						style="text-align: center;">
+						<tr>
+							<th style="color: navy;">CORRECT</th>
+							<th style="color: navy;">WRONG</th>
+						</tr>
+						<tr>
+							<td th:text="${response.correct}" style="color: green;"></td>
+							<td th:text="${response.wrong}" style="color: red;"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

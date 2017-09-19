@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>SJ-GROUP</title>
+<link rel="stylesheet" th:href="@{/css/demo.css}" />
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<div class="container">
+		<div class="freshdesignweb-top">
+			<a href="http://www.freshdesignweb.com" target="_blank">Home</a> <span
+				class="right"> <a
+				href="http://www.freshdesignweb.com/beautiful-registration-form-with-html5-and-css3.html">
+					<strong>Exploring , Learning , Sharing</strong>
+			</a>
+			</span>
+			<div class="clr"></div>
+		</div>
+		<header>
+			<h1>
+				<span>Public Group</span>Java_Gyan_Mantra Online Test.!
+			</h1>
+			<h2 th:text="${message}"></h2>
+		</header>
+		<div class="form">
+			<form id="contactform" action="/Java_Gyan_Mantra/start">
+				<p class="contact">
+					<label for="name">Name</label>
+				</p>
+				<input id="name" name="name" placeholder="First and last name"
+					required="" tabindex="1" type="text" />
+
+				<p class="contact">
+					<label for="email">Email</label>
+				</p>
+				<input id="email" name="email" placeholder="example@domain.com"
+					required="" type="email" /> <br></br>
+				<center>
+					<input class="buttom" name="submit" id="submit" tabindex="5"
+						value="Start Test" type="submit" />
+				</center>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
